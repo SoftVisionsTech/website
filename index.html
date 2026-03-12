@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SoftVisions — Software & AI Solutions</title>
+  <meta name="description" content="SoftVisions builds software and web applications that make work easier across Healthcare, Businesses, NGOs, Accounting, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Friendly, legible typefaces -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Animated gradient + circuit overlay -->
+  <div class="bg-gradient" aria-hidden="true"></div>
+  <div class="bg-circuits" aria-hidden="true">
+    <!-- Lightweight, decorative inline SVG “circuit” pattern -->
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="wire" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="rgba(255,255,255,0.14)"/>
+          <stop offset="1" stop-color="rgba(255,255,255,0.05)"/>
+        </linearGradient>
+      </defs>
+      <!-- A few abstract “circuit” paths -->
+      <g fill="none" stroke="url(#wire)" stroke-width="1.2">
+        <path d="M0,80 C200,120 320,10 520,60 S840,140 1200,70" />
+        <path d="M0,260 C220,200 360,340 580,280 S900,220 1200,300" />
+        <path d="M0,520 C260,460 340,620 600,540 S920,480 1200,560" />
+        <path d="M100,0 L100,800 M380,0 L380,800 M780,0 L780,800 M1040,0 L1040,800" opacity="0.3"/>
+      </g>
+      <!-- Nodes -->
+      <g fill="rgba(255,255,255,0.18)">
+        <circle cx="100" cy="260" r="3" />
+        <circle cx="380" cy="200" r="3" />
+        <circle cx="780" cy="220" r="3" />
+        <circle cx="1040" cy="300" r="3" />
+        <circle cx="520" cy="60" r="3" />
+        <circle cx="600" cy="540" r="3" />
+      </g>
+    </svg>
+  </div>
+
+  <!-- ========== Header ========== -->
+  <header class="site-header container">
+    <a class="brand" href="#">
+      <!-- Minimal geometric logo (inline SVG): SV monogram -->
+      <span class="logo" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 64 64" role="img">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#8C5A52" />
+              <stop offset="100%" stop-color="#C3A69A" />
+            </linearGradient>
+          </defs>
+          <rect x="4" y="4" width="56" height="56" rx="12" fill="url(#g1)" />
+          <path d="M18 26c4-7 16-7 20 0c2 3 2 7-3 9l-7 3c-5 2-6 7-3 11M34 18h12l-4 28h-9"
+                stroke="#F1E9E4" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-text">SoftVisions</span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="#about">About</a>
+      <a href="#domains">Domains</a>
+      <a href="#products">Products</a>
+      <a class="btn btn-ghost" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ========== Hero ========== -->
+  <section class="hero container">
+    <div class="hero-content">
+      <h1>
+        Software & AI to <span class="accent">simplify work</span> across industries
+      </h1>
+      <p class="lead">
+        SoftVisions designs and delivers robust software and web applications that streamline processes,
+        uncover insights, and enhance decision‑making—whether you’re in Healthcare, running a Business,
+        operating an NGO, or managing Accounting workflows.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#products">Explore Products</a>
+        <a class="btn btn-secondary" href="./barcode-studio/" title="Launch the Barcode Studio app as a subpage">
+          Launch “Barcode Studio”
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== About / Value ========== -->
+  <section id="about" class="section container">
+    <div class="section-head">
+      <h2>What we do</h2>
+      <p>
+        We build modern, maintainable applications that are secure, scalable, and tailored for your context.
+        Our teams combine human‑centered design with pragmatic engineering to ship outcomes—fast.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <article class="card feature">
+        <h3>Full‑stack Web Apps</h3>
+        <p>Cloud‑ready applications with clean APIs, resilient back‑ends, and delightful front‑ends.</p>
+      </article>
+      <article class="card feature">
+        <h3>Process Automation</h3>
+        <p>Replace repetitive tasks with reliable automations that save time and reduce errors.</p>
+      </article>
+      <article class="card feature">
+        <h3>Data & Insights</h3>
+        <p>Dashboards and analytics that turn raw data into clear, timely decisions.</p>
+      </article>
+      <article class="card feature">
+        <h3>AI‑Assisted Workflows</h3>
+        <p>Smart features that extract, classify, recommend, and accelerate day‑to‑day work.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== Domains ========== -->
+  <section id="domains" class="section container">
+    <div class="section-head">
+      <h2>Domains we serve</h2>
+      <p>We deliver domain‑specific solutions without reinventing the wheel.</p>
+    </div>
+
+    <div class="domains-grid">
+      <article class="card domain">
+        <h3>Healthcare</h3>
+        <ul>
+          <li>Digital intake & e‑forms</li>
+          <li>Secure records & scheduling</li>
+          <li>Operational dashboards</li>
+        </ul>
+      </article>
+
+      <article class="card domain">
+        <h3>Businesses</h3>
+        <ul>
+          <li>Sales & inventory systems</li>
+          <li>Workflow orchestration</li>
+          <li>Customer portals</li>
+        </ul>
+      </article>
+
+      <article class="card domain">
+        <h3>NGOs / Non‑profits</h3>
+        <ul>
+          <li>Program tracking</li>
+          <li>Grant & donor management</li>
+          <li>Field data collection</li>
+        </ul>
+      </article>
+
+      <article class="card domain">
+        <h3>Accounting</h3>
+        <ul>
+          <li>Voucher digitization</li>
+          <li>Automated reconciliation</li>
+          <li>Reporting & compliance</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== Products CTA (Barcode) ========== -->
+  <section id="products" class="section container">
+    <div class="product-highlight card">
+      <div class="ph-copy">
+        <h2>Barcode Studio</h2>
+        <p>
+          A fast, browser‑based barcode generator that supports previews, single image exports, and
+          multi‑label PDF sheets—perfect for inventory, samples, and packaging.
+        </p>
+        <a class="btn btn-secondary" href="./barcode-studio/">
+          Open Barcode Studio
+        </a>
+      </div>
+      <div class="ph-visual" aria-hidden="true">
+        <!-- Simple barcode illustration -->
+        <div class="barcode-demo">
+          <span></span><span></span><span class="thin"></span><span></span><span class="thin"></span>
+          <span></span><span></span><span class="thin"></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div class="foot-brand">
+        <div class="foot-logo">
+          <!-- reuse same SVG logo -->
+          <svg width="28" height="28" viewBox="0 0 64 64" role="img" aria-label="SoftVisions logo">
+            <defs>
+              <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#8C5A52" />
+                <stop offset="100%" stop-color="#C3A69A" />
+              </linearGradient>
+            </defs>
+            <rect x="4" y="4" width="56" height="56" rx="12" fill="url(#g2)" />
+            <path d="M18 26c4-7 16-7 20 0c2 3 2 7-3 9l-7 3c-5 2-6 7-3 11M34 18h12l-4 28h-9"
+                  stroke="#F1E9E4" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <strong>SoftVisions</strong><br/>
+          Software • AI • Web Applications
+        </div>
+      </div>
+
+      <div class="foot-links">
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#domains">Domains</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="./barcode-studio/">Barcode Studio</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-contact">
+        <h4>Contact</h4>
+        <p>
+          Email: <a href="mailto:softvisionstech@gmail.com">softvisionstech@gmail.com</a><br/>
+          Mobile: <a href="tel:+917070606037">+91 70706 06037</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="copy">
+      © <span id="year"></span> SoftVisions • All rights reserved
+    </div>
+  </footer>
+
+  <script>
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

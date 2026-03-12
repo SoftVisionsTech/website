@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SoftVisions — Barcode Studio</title>
+
+  <!-- Global site theme -->
+  <link rel="stylesheet" href="../styles.css">
+
+  <!-- Subpage-specific styles -->
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <!-- Background layers -->
+  <div class="bg-gradient"></div>
+  <div class="bg-circuits"></div>
+
+  <!-- ========== Header (Same as Home) ========== -->
+  <header class="site-header container">
+    <a href="../index.html" class="brand">
+      <span class="logo">
+        <svg width="36" height="36" viewBox="0 0 64 64">
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#8C5A52"/>
+            <stop offset="100%" stop-color="#C3A69A"/>
+          </linearGradient></defs>
+          <rect x="4" y="4" width="56" height="56" rx="12" fill="url(#g1)"/>
+          <path d="M18 26c4-7 16-7 20 0c2 3 2 7-3 9l-7 3c-5 2-6 7-3 11M34 18h12l-4 28h-9"
+            stroke="#F1E9E4" stroke-width="4" fill="none" />
+        </svg>
+      </span>
+      <span class="brand-text">SoftVisions</span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#domains">Domains</a>
+      <a href="../index.html#products">Products</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== Intro Section ===== -->
+  <section class="container page-intro">
+    <h1>Barcode Studio</h1>
+    <p class="lead">Preview barcodes, export PNG/SVG, and generate multi‑label PDF sheets — fast and offline in your browser.</p>
+  </section>
+
+  <!-- ===== Mode Toggle Row ===== -->
+  <div class="container">
+    <div class="grid-2 header-row">
+      <div></div>
+      <div class="right">
+        <label class="sv-toggle" aria-label="Toggle generation mode">
+          <input type="checkbox" id="modeSwitch">
+          <span class="slider"></span>
+          <span class="label"><span id="modeLabel">Single</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Main layout ===== -->
+  <main class="container">
+    <div class="grid-2 gap-20">
+
+      <!-- LEFT COLUMN — PREVIEW -->
+      <section id="previewCard" class="card p-4 shadow-sm">
+        <h4 class="mb-16">Preview</h4>
+
+        <div class="grid-3 gap-16">
+          <div>
+            <label class="form-label">Prefix</label>
+            <input id="prefix" class="form-control" value="INV-">
+          </div>
+          <div>
+            <label class="form-label">Serial</label>
+            <input id="serial" class="form-control" value="1">
+          </div>
+          <div>
+            <label class="form-label">Suffix</label>
+            <input id="suffix" class="form-control">
+          </div>
+        </div>
+
+        <div class="grid-2 gap-16 mt-12">
+          <div>
+            <label class="form-label">Print Text</label>
+            <label class="sv-toggle small">
+              <input type="checkbox" id="printTextSwitch" checked>
+              <span class="slider"></span>
+              <span class="label">On / Off</span>
+            </label>
+          </div>
+          <div>
+            <label class="form-label">Text Distance (mm)</label>
+            <input id="textDistance" class="form-control" value="0.5" step="0.1">
+          </div>
+        </div>
+
+        <button id="btnPreview" class="btn btn-primary w-100 mt-16">Refresh Preview</button>
+
+        <div class="preview-box mt-16">
+          <svg id="previewSvg"></svg>
+        </div>
+
+        <!-- SINGLE MODE DOWNLOAD (animated) -->
+        <button id="btnGoSingle" class="btn btn-secondary w-100 mt-16 d-none slide-item">Download</button>
+        <small id="btnHintSingle" class="text-muted block mt-6 d-none slide-item">Single: Image</small>
+      </section>
+
+      <!-- RIGHT COLUMN — GENERATE (animated) -->
+      <section id="generateCard" class="card p-4 shadow-sm slide">
+        <h4 class="mb-16">Generate</h4>
+
+        <!-- MULTIPLE MODE SETTINGS -->
+        <div id="multiControls" class="gap-16">
+          <div class="grid-2 gap-16">
+            <div>
+              <label class="form-label">Starting Serial</label>
+              <input id="startSerialBatch" class="form-control" value="1">
+            </div>
+
+            <div>
+              <label class="form-label">Number of Barcodes</label>
+              <input id="count" class="form-control" value="30">
+            </div>
+
+            <div>
+              <label class="form-label">Padding</label>
+              <input id="pad" class="form-control" value="5">
+            </div>
+
+            <div>
+              <label class="form-label">Page Size</label>
+              <select id="page" class="form-select">
+                <option>A4</option>
+                <option>LETTER</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="form-label">Rows</label>
+              <input id="rows" class="form-control" value="7">
+            </div>
+            <div>
+              <label class="form-label">Cols</label>
+              <input id="cols" class="form-control" value="3">
+            </div>
+
+            <div>
+              <label class="form-label">Label W (mm)</label>
+              <input id="lw" class="form-control" value="63.5">
+            </div>
+            <div>
+              <label class="form-label">Label H (mm)</label>
+              <input id="lh" class="form-control" value="38.1">
+            </div>
+
+            <div>
+              <label class="form-label">Gap H (mm)</label>
+              <input id="gh" class="form-control" value="2.5">
+            </div>
+            <div>
+              <label class="form-label">Gap V (mm)</label>
+              <input id="gv" class="form-control" value="2.5">
+            </div>
+
+            <div>
+              <label class="form-label">Margins (mm)</label>
+              <input id="mg" class="form-control" value="10">
+            </div>
+          </div>
+        </div>
+
+        <!-- MULTIPLE MODE DOWNLOAD -->
+        <button id="btnGoMulti" class="btn btn-secondary w-100 mt-16">Download</button>
+        <small id="btnHintMulti" class="text-muted block mt-6">Multiple: PDF</small>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== Footer (same as home) ===== -->
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div class="foot-brand">
+        <div class="foot-logo">
+          <svg width="28" height="28" viewBox="0 0 64 64">
+            <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#8C5A52"/><stop offset="100%" stop-color="#C3A69A"/>
+            </linearGradient></defs>
+            <rect x="4" y="4" width="56" height="56" rx="12" fill="url(#g2)"/>
+            <path d="M18 26c4-7 16-7 20 0c2 3 2 7-3 9l-7 3c-5 2-6 7-3 11M34 18h12l-4 28h-9"
+              stroke="#F1E9E4" stroke-width="4" fill="none"/>
+          </svg>
+        </div>
+        <div><strong>SoftVisions</strong><br>Software • AI • Web Applications</div>
+      </div>
+
+      <div class="foot-links">
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#domains">Domains</a></li>
+          <li><a href="../index.html#products">Products</a></li>
+          <li><a href="./index.html">Barcode Studio</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-contact">
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:softvisionstech@gmail.com">softvisionstech@gmail.com</a><br>
+           Mobile: <a href="tel:+917070606037">+91 70706 06037</a></p>
+      </div>
+    </div>
+
+    <div class="copy">© <span id="year"></span> SoftVisions • All rights reserved</div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.12.3/dist/JsBarcode.all.min.js"></script>
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+  <!-- App logic -->
+  <script src="./app.js"></script>
+</body>
+</html>

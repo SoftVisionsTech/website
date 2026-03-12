@@ -1,0 +1,82 @@
+/* Utility: hide (since we aren't using Bootstrap utilities) */
+.d-none { display: none !important; }
+
+/* Responsive grid */
+.grid-2 { display:grid; grid-template-columns: 1fr; }
+.grid-3 { display:grid; grid-template-columns: 1fr; }
+.gap-20 { gap: 20px; }
+.gap-16 { gap: 16px; }
+
+@media (min-width: 768px) {
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+.header-row { margin-bottom: 10px; }
+.header-row .right { display:flex; justify-content:flex-end; }
+
+/* spacing helpers */
+.mt-6{ margin-top:.375rem; }
+.mt-12{ margin-top:.75rem; }
+.mt-16{ margin-top:1rem; }
+.mb-16{ margin-bottom:1rem; }
+.block{ display:block; }
+
+/* Inputs */
+.form-control, .form-select{
+  background: rgba(255,255,255,.92);
+  border:1px solid #d6d6d6;
+  color:#111;
+  padding:.6rem .65rem;
+  border-radius:8px;
+}
+.form-label{ display:block; margin-bottom:.4rem; font-weight:600; }
+.form-control:focus, .form-select:focus{
+  outline:none; border-color:var(--deep);
+  box-shadow:0 0 0 .2rem rgba(76,29,149,.25);
+}
+
+/* Preview box */
+.preview-box{
+  border:1px dashed rgba(255,255,255,.35);
+  background: rgba(255,255,255,.06);
+  border-radius:12px;
+  padding:12px;
+  min-height:160px;
+}
+
+/* Toggle (mode + print text) */
+.sv-toggle{
+  --w: 50px; --h: 26px;
+  display:inline-flex; align-items:center; gap:.6rem; cursor:pointer; user-select:none;
+}
+.sv-toggle.small{ --w: 44px; --h: 22px; gap:.5rem; }
+.sv-toggle input{ display:none; }
+.sv-toggle .slider{
+  position:relative; width:var(--w); height:var(--h);
+  background: rgba(255,255,255,.25);
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius:999px; transition: background .2s ease, border-color .2s ease;
+}
+.btn-secondary{
+	width:stretch;
+}
+.sv-toggle .slider::after{
+  content:""; position:absolute; top:2px; left:2px;
+  width: calc(var(--h) - 4px); height: calc(var(--h) - 4px);
+  background:#fff; border-radius:50%;
+  box-shadow:0 2px 6px rgba(0,0,0,.35);
+  transition: transform .18s ease;
+}
+.sv-toggle input:checked + .slider{
+  background: linear-gradient(135deg, var(--mousse), var(--mousse-300));
+  border-color: var(--mousse-300);
+}
+.sv-toggle input:checked + .slider::after{
+  transform: translateX(calc(var(--w) - var(--h)));
+}
+.sv-toggle .label{ color:var(--ink); font-weight:600; }
+
+/* Card comfy padding */
+.card.p-4{ padding:20px; }
+.mb-16{ margin-bottom:16px; }
